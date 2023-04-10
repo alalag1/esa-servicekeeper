@@ -27,7 +27,7 @@ import io.esastack.servicekeeper.core.internal.MoatCreationLimit;
 import io.esastack.servicekeeper.core.moats.MoatEventProcessor;
 import io.esastack.servicekeeper.core.moats.MoatType;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.CircuitBreakerMoat;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.moats.concurrentlimit.ConcurrentLimitMoat;
 import io.esastack.servicekeeper.core.moats.ratelimit.RateLimitMoat;
 import io.esastack.servicekeeper.core.utils.LogUtils;

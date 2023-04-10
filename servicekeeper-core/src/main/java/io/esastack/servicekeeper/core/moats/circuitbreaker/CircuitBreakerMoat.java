@@ -33,7 +33,7 @@ import io.esastack.servicekeeper.core.moats.MoatEventImpl;
 import io.esastack.servicekeeper.core.moats.MoatEventProcessor;
 import io.esastack.servicekeeper.core.moats.MoatType;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateConfigFilling;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.LogUtils;
 import io.esastack.servicekeeper.core.utils.TimerLogger;
 

@@ -17,7 +17,7 @@ package io.esastack.servicekeeper.core.asynchandle;
 
 import io.esastack.servicekeeper.core.exception.ServiceKeeperNotPermittedException;
 import io.esastack.servicekeeper.core.executionchain.Context;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 /**
  * The {@link RequestHandle} holds a handler of a request, and you can get the status and result of the corresponding

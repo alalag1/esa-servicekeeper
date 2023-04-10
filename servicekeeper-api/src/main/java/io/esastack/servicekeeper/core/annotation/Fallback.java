@@ -15,14 +15,7 @@
  */
 package io.esastack.servicekeeper.core.annotation;
 
-import io.esastack.servicekeeper.core.exception.ServiceKeeperNotPermittedException;
-
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -43,7 +36,7 @@ public @interface Fallback {
     /**
      * specifiedException
      */
-    Class<? extends Exception> fallbackExceptionClass() default ServiceKeeperNotPermittedException.class;
+    String fallbackExceptionClass() default "";
 
     /**
      * specifiedValue
@@ -53,7 +46,7 @@ public @interface Fallback {
     /**
      * Whether also apply to business exceptions.
      * - true: business exceptions will also cause a fallback.
-     * - false: only the internal exception of serviceKeeper
+     * - false: only the internal exception to serviceKeeper
      * will cause a fallback
      */
     boolean alsoApplyToBizException() default false;

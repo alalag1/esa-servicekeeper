@@ -18,7 +18,7 @@ package io.esastack.servicekeeper.ext.factory.spring;
 import esa.commons.logging.Logger;
 import io.esastack.servicekeeper.core.factory.PredicateStrategyConfig;
 import io.esastack.servicekeeper.core.factory.PredicateStrategyFactoryImpl;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.LogUtils;
 import io.esastack.servicekeeper.ext.factory.spring.utils.SpringContextUtils;
 import org.springframework.context.ApplicationContext;

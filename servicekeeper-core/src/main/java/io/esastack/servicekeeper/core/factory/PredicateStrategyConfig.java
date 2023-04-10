@@ -18,7 +18,7 @@ package io.esastack.servicekeeper.core.factory;
 import esa.commons.Checks;
 import io.esastack.servicekeeper.core.common.ResourceId;
 import io.esastack.servicekeeper.core.config.CircuitBreakerConfig;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 import java.util.Arrays;
 import java.util.Objects;

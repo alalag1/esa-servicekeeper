@@ -15,7 +15,7 @@
  */
 package io.esastack.servicekeeper.core.configsource;
 
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 public class ExternalConfig extends DynamicConfig {
 

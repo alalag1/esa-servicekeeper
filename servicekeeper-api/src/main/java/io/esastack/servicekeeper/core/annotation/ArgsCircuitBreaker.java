@@ -15,9 +15,6 @@
  */
 package io.esastack.servicekeeper.core.annotation;
 
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
-
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -47,7 +44,7 @@ public @interface ArgsCircuitBreaker {
     /**
      * the predicateStrategy to predicate whether a call is success.
      */
-    Class<? extends PredicateStrategy> predicateStrategy() default PredicateByException.class;
+    String predicateStrategyClass() default "";
 
     /**
      * the maxSpendTimeMs is used to predicate whether a  call is successful.

@@ -15,15 +15,7 @@
  */
 package io.esastack.servicekeeper.core.annotation;
 
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
-
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -61,7 +53,7 @@ public @interface CircuitBreaker {
     /**
      * the predicateStrategy to predicate whether a call is success.
      */
-    Class<? extends PredicateStrategy> predicateStrategy() default PredicateByException.class;
+    String predicateStrategyClass() default "";
 
     /**
      * the maxSpendTimeMs is used to predicate whether a  call is successful.

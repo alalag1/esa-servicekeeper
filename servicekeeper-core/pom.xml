@@ -36,6 +36,11 @@
             <version>${caffeine.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.esastack</groupId>
+            <artifactId>servicekeeper-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

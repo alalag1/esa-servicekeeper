@@ -17,7 +17,7 @@ package io.esastack.servicekeeper.metrics.actuator.endpoints;
 
 import io.esastack.servicekeeper.core.config.CircuitBreakerConfig;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.CircuitBreaker;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.DurationUtils;
 
 class CircuitBreakerConfigPojo {

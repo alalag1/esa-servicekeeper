@@ -18,7 +18,7 @@ package io.esastack.servicekeeper.core.entry;
 import io.esastack.servicekeeper.core.asynchandle.RequestHandle;
 import io.esastack.servicekeeper.core.common.OriginalInvocation;
 import io.esastack.servicekeeper.core.executionchain.Context;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 /**
  * The core entry to try to get the permission of accessing original resource and the result are all wrapped in the

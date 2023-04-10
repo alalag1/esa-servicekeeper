@@ -17,9 +17,9 @@ package io.esastack.servicekeeper.ext.factory.spring;
 
 import io.esastack.servicekeeper.core.common.ResourceId;
 import io.esastack.servicekeeper.core.config.CircuitBreakerConfig;
-import io.esastack.servicekeeper.core.executionchain.Context;
+import io.esastack.servicekeeper.core.exec.Context;
 import io.esastack.servicekeeper.core.factory.PredicateStrategyConfig;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.ext.factory.spring.utils.SpringContextUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

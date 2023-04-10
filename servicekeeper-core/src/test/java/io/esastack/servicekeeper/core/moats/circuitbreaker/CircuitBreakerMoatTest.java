@@ -27,7 +27,7 @@ import io.esastack.servicekeeper.core.moats.MoatEventProcessor;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByExceptionAndSpendTime;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateBySpendTime;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.ClassCastUtils;
 import io.esastack.servicekeeper.core.utils.RandomUtils;
 import org.assertj.core.api.BDDAssertions;

@@ -15,7 +15,7 @@
  */
 package io.esastack.servicekeeper.core.factory;
 
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.Ordered;
 
 public interface PredicateStrategyFactory extends Factory<PredicateStrategy, PredicateStrategyConfig>, Ordered {

@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.CompletionException;
 
-public abstract class Context implements Serializable {
+public abstract class Context implements io.esastack.servicekeeper.core.exec.Context, Serializable {
 
     private static final long serialVersionUID = 69139775609353556L;
 

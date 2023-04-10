@@ -22,7 +22,7 @@ import io.esastack.servicekeeper.core.common.ResourceId;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByExceptionAndSpendTime;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateBySpendTime;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.LogUtils;
 
 import java.util.Arrays;

@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.esastack.servicekeeper.core.moats.circuitbreaker.predicate;
+package io.esastack.servicekeeper.core.predicate;
 
-import io.esastack.servicekeeper.core.executionchain.Context;
+
+import io.esastack.servicekeeper.core.exec.Context;
 
 /**
  * The predicateStrategy to predicate whether a original invocation is success or failure. The result is false that

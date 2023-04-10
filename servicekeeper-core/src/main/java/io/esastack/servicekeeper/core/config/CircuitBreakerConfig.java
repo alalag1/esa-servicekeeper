@@ -18,7 +18,7 @@ package io.esastack.servicekeeper.core.config;
 import esa.commons.Checks;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.CircuitBreaker;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.DurationUtils;
 import io.esastack.servicekeeper.core.utils.ParamCheckUtils;
 

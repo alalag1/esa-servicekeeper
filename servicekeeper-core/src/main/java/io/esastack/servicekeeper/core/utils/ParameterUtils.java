@@ -28,6 +28,8 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static io.esastack.servicekeeper.core.utils.MethodUtils.toPredicateStrategy;
+
 public final class ParameterUtils {
 
     private ParameterUtils() {
@@ -96,7 +98,7 @@ public final class ParameterUtils {
                     .ignoreExceptions(argsCircuitBreaker.ignoreExceptions())
                     .waitDurationInOpenState(DurationUtils.parse(argsCircuitBreaker.waitDurationInOpenState()))
                     .maxSpendTimeMs(argsCircuitBreaker.maxSpendTimeMs())
-                    .predicateStrategy(argsCircuitBreaker.predicateStrategy())
+                    .predicateStrategy(toPredicateStrategy(argsCircuitBreaker.predicateStrategyClass()))
                     .build();
         }
 

@@ -18,8 +18,9 @@ package io.esastack.servicekeeper.core.moats.circuitbreaker.predicate;
 import io.esastack.servicekeeper.core.common.ResourceId;
 import io.esastack.servicekeeper.core.config.CircuitBreakerConfig;
 import io.esastack.servicekeeper.core.configsource.ExternalConfig;
-import io.esastack.servicekeeper.core.executionchain.Context;
+import io.esastack.servicekeeper.core.exec.Context;
 import io.esastack.servicekeeper.core.listener.FondConfigListener;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.utils.ClassCastUtils;
 
 import java.util.Arrays;

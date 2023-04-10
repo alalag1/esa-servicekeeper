@@ -33,7 +33,7 @@ import io.esastack.servicekeeper.core.moats.Moat;
 import io.esastack.servicekeeper.core.moats.MoatCluster;
 import io.esastack.servicekeeper.core.moats.RetryableMoatCluster;
 import io.esastack.servicekeeper.core.moats.circuitbreaker.CircuitBreakerMoat;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 import io.esastack.servicekeeper.core.retry.RetryOperations;
 import io.esastack.servicekeeper.core.retry.RetryOperationsImpl;
 import io.esastack.servicekeeper.core.retry.RetryableExecutor;

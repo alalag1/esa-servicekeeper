@@ -52,7 +52,7 @@ public class MockMethods {
     }
 
     @Fallback(fallbackMethod = "fallbackMethod", fallbackClass = MockMethods.class,
-            fallbackExceptionClass = RuntimeException.class, fallbackValue = "FallbackValue")
+            fallbackExceptionClass = "java.lang.RuntimeException", fallbackValue = "FallbackValue")
     public void methodOnlyFallback() {
 
     }
@@ -88,7 +88,9 @@ public class MockMethods {
     }
 
     @CircuitBreaker(ringBufferSizeInClosedState = 99, ringBufferSizeInHalfOpenState = 9,
-            waitDurationInOpenState = "59s", predicateStrategy = PredicateByExceptionAndSpendTime.class,
+            waitDurationInOpenState = "59s",
+            predicateStrategyClass = "io.esastack.servicekeeper.core.moats.circuitbreaker.predicate." +
+                    "PredicateByExceptionAndSpendTime",
             maxSpendTimeMs = 50, failureRateThreshold = 49.0f,
             ignoreExceptions = {IllegalStateException.class, IllegalArgumentException.class})
     public void methodOnlyCircuitBreaker() {
@@ -96,7 +98,9 @@ public class MockMethods {
     }
 
     @CircuitBreaker(ringBufferSizeInClosedState = 99, ringBufferSizeInHalfOpenState = 9,
-            waitDurationInOpenState = "59s", predicateStrategy = PredicateByExceptionAndSpendTime.class,
+            waitDurationInOpenState = "59s",
+            predicateStrategyClass = "io.esastack.servicekeeper.core.moats.circuitbreaker.predicate." +
+                     "PredicateByExceptionAndSpendTime",
             maxSpendTimeMs = 50, value = 49.0f,
             ignoreExceptions = {IllegalStateException.class, IllegalArgumentException.class})
     public void methodCircuitBreakerAliasSet() {
@@ -104,7 +108,9 @@ public class MockMethods {
     }
 
     @CircuitBreaker(ringBufferSizeInClosedState = 99, ringBufferSizeInHalfOpenState = 9,
-            waitDurationInOpenState = "59s", predicateStrategy = PredicateByExceptionAndSpendTime.class,
+            waitDurationInOpenState = "59s",
+            predicateStrategyClass = "io.esastack.servicekeeper.core.moats.circuitbreaker.predicate." +
+                    "PredicateByExceptionAndSpendTime",
             maxSpendTimeMs = 50, failureRateThreshold = 49.0f, value = 51.0f,
             ignoreExceptions = {IllegalStateException.class, IllegalArgumentException.class})
     public void methodCircuitBreakerAliasSetError() {
@@ -133,7 +139,9 @@ public class MockMethods {
 
     public void methodOnlyArgCircuitBreaker(@ArgsCircuitBreaker(ringBufferSizeInHalfOpenState = 11,
             ringBufferSizeInClosedState = 101, waitDurationInOpenState = "61s",
-            predicateStrategy = PredicateByExceptionAndSpendTime.class, maxSpendTimeMs = 10,
+            predicateStrategyClass = "io.esastack.servicekeeper.core.moats.circuitbreaker.predicate." +
+                    "PredicateByExceptionAndSpendTime",
+            maxSpendTimeMs = 10,
             ignoreExceptions = {RuntimeException.class},
             failureRateThresholdMap = "{LiMing: 20.0f, ZhangSan: 60.0f}") String name) {
 
@@ -141,11 +149,13 @@ public class MockMethods {
 
     @Alias("method-withAll")
     @Fallback(fallbackMethod = "fallbackMethod", fallbackClass = MockMethods.class,
-            fallbackExceptionClass = RuntimeException.class, fallbackValue = "FallbackValue")
+            fallbackExceptionClass = "java.lang.RuntimeException", fallbackValue = "FallbackValue")
     @RateLimiter(limitForPeriod = 500, limitRefreshPeriod = "2s")
     @ConcurrentLimiter(threshold = 500)
     @CircuitBreaker(ringBufferSizeInClosedState = 99, ringBufferSizeInHalfOpenState = 9,
-            waitDurationInOpenState = "59s", predicateStrategy = PredicateByExceptionAndSpendTime.class,
+            waitDurationInOpenState = "59s",
+            predicateStrategyClass = "io.esastack.servicekeeper.core.moats.circuitbreaker.predicate." +
+                    "PredicateByExceptionAndSpendTime",
             maxSpendTimeMs = 50, failureRateThreshold = 49.0f,
             ignoreExceptions = {IllegalStateException.class, IllegalArgumentException.class})
     @Retryable(maxAttempts = 10, includeExceptions = RuntimeException.class,

@@ -15,6 +15,7 @@
  */
 package io.esastack.servicekeeper.core.utils;
 
+import esa.commons.ClassUtils;
 import esa.commons.StringUtils;
 import io.esastack.servicekeeper.core.annotation.Alias;
 import io.esastack.servicekeeper.core.annotation.Backoff;
@@ -33,6 +34,9 @@ import io.esastack.servicekeeper.core.config.RateLimitConfig;
 import io.esastack.servicekeeper.core.config.RetryConfig;
 import io.esastack.servicekeeper.core.config.ServiceKeeperConfig;
 import io.esastack.servicekeeper.core.entry.CompositeServiceKeeperConfig;
+import io.esastack.servicekeeper.core.exception.ServiceKeeperException;
+import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateByException;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -143,14 +147,14 @@ public final class MethodUtils {
                     .ringBufferSizeInHalfOpenState(circuitBreaker.ringBufferSizeInHalfOpenState())
                     .waitDurationInOpenState(DurationUtils.parse(circuitBreaker.waitDurationInOpenState()))
                     .maxSpendTimeMs(circuitBreaker.maxSpendTimeMs())
-                    .predicateStrategy(circuitBreaker.predicateStrategy())
+                    .predicateStrategy(toPredicateStrategy(circuitBreaker.predicateStrategyClass()))
                     .build();
         }
 
         final Fallback fallback = method.getAnnotation(Fallback.class);
         if (fallback != null) {
             FallbackConfig.Builder builder = FallbackConfig.builder()
-                    .specifiedException(fallback.fallbackExceptionClass())
+                    .specifiedException(forExceptionClass(fallback.fallbackExceptionClass()))
                     .specifiedValue(fallback.fallbackValue())
                     .alsoApplyToBizException(fallback.alsoApplyToBizException());
             if (fallback.fallbackClass() == Void.class && StringUtils.isEmpty(fallback.fallbackMethod())) {
@@ -195,6 +199,40 @@ public final class MethodUtils {
                 .fallbackConfig(fallbackConfig)
                 .retryConfig(retryConfig)
                 .build();
+    }
+
+    static Class<? extends PredicateStrategy> toPredicateStrategy(String clazz) {
+        if (StringUtils.isBlank(clazz)) {
+            // default to by-exception
+            return PredicateByException.class;
+        } else {
+            Class<?> c = ClassUtils.forName(clazz, false);
+            if (c == null) {
+                throw new ServiceKeeperException("could not find result predicate class: " + clazz);
+            }
+            if (PredicateStrategy.class.isAssignableFrom(c)) {
+                return (Class<? extends PredicateStrategy>) c;
+            } else {
+                throw new ServiceKeeperException("specified predicate strategy class is not a type of" +
+                        " Class<? extends PredicateStrategy>: " + clazz);
+            }
+        }
+    }
+
+    private static Class<? extends Exception> forExceptionClass(String ex) {
+        if (StringUtils.isBlank(ex)) {
+            return null;
+        }
+        Class<?> c = ClassUtils.forName(ex, false);
+        if (c == null) {
+            throw new ServiceKeeperException("could not find exception class: " + ex);
+        }
+        if (Exception.class.isAssignableFrom(c)) {
+            return (Class<? extends Exception>) c;
+        } else {
+            throw new ServiceKeeperException("specified exception class is not a type of Class<? extends Exception>: "
+                    + ex);
+        }
     }
 
     static GroupResourceId getGroup(Method method) {

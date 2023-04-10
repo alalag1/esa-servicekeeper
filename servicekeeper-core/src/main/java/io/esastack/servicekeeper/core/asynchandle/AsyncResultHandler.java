@@ -17,7 +17,7 @@ package io.esastack.servicekeeper.core.asynchandle;
 
 import io.esastack.servicekeeper.core.executionchain.Context;
 import io.esastack.servicekeeper.core.executionchain.ExecutionChain;
-import io.esastack.servicekeeper.core.moats.circuitbreaker.predicate.PredicateStrategy;
+import io.esastack.servicekeeper.core.predicate.PredicateStrategy;
 
 /**
  * The class is designed to handle async result value. In fact, the implementation must invoke
