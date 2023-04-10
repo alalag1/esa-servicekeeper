@@ -19,47 +19,9 @@
     <parent>
         <groupId>io.esastack</groupId>
         <artifactId>servicekeeper-configsource</artifactId>
-        <version>0.1.1-RC-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>servicekeeper-configsource-common</artifactId>
     <name>ServiceKeeper :: ConfigSource :: Common</name>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.esastack</groupId>
-                <artifactId>cabin-module-maven-plugin</artifactId>
-                <version>${cabin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>module-repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>cabin-classifier</classifier>
-                            <exported>
-                                <packages>
-                                    <package>io.esastack.servicekeeper.configsource</package>
-                                </packages>
-                                <!-- configure exported resource -->
-                                <resources>
-                                    <resource>META-INF/services/</resource>
-                                </resources>
-                            </exported>
-                            <imported>
-                                <packages>
-                                    <package>esa.commons</package>
-                                </packages>
-                            </imported>
-                            <excludes>
-                                <exclude>io.esastack:servicekeeper-*</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
