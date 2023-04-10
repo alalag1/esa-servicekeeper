@@ -121,7 +121,6 @@
         <junit.version>5.7.1</junit.version>
         <assertj.version>3.19.0</assertj.version>
         <mockito.version>3.6.0</mockito.version>
-        <cabin.version>0.1.0</cabin.version>
         <jacoco.version>0.8.6</jacoco.version>
         <guava.version>29.0-jre</guava.version>
     </properties>
@@ -233,49 +232,6 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>servicekeeper-metrics-actuator</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <!--for cabin package-->
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-spring-adapter</artifactId>
-                <classifier>cabin-classifier</classifier>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-core</artifactId>
-                <classifier>cabin-classifier</classifier>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-configsource-common</artifactId>
-                <classifier>cabin-classifier</classifier>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-ext-listenablefuture</artifactId>
-                <classifier>cabin-classifier</classifier>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-ext-nettyfuture</artifactId>
-                <classifier>cabin-classifier</classifier>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>servicekeeper-ext-factory</artifactId>
-                <classifier>cabin-classifier</classifier>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

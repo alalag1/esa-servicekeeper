@@ -36,14 +36,5 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>servicekeeper-core</artifactId>
         </dependency>
-
-        <!--for cabin package-->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>servicekeeper-core</artifactId>
-            <classifier>cabin-classifier</classifier>
-            <optional>true</optional>
-        </dependency>
-
     </dependencies>
 </project>

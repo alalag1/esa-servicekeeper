@@ -37,53 +37,6 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>servicekeeper-spring-adapter</artifactId>
         </dependency>
-
-        <!--for cabin package-->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>servicekeeper-spring-adapter</artifactId>
-            <classifier>cabin-classifier</classifier>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.esastack</groupId>
-                <artifactId>cabin-module-maven-plugin</artifactId>
-                <version>${cabin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>module-repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>cabin-classifier</classifier>
-                            <exported>
-                                <packages>
-                                    <package>io.esastack.servicekeeper.metrics.actuator</package>
-                                </packages>
-                                <!-- configure exported resource -->
-                                <resources>
-                                    <resource>META-INF/spring.factories</resource>
-                                </resources>
-                            </exported>
-                            <imported>
-                                <packages>
-                                    <package>org.springframework</package>
-                                    <package>esa.commons</package>
-                                </packages>
-                            </imported>
-                            <excludes>
-                                <exclude>io.esastack:servicekeeper-*</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

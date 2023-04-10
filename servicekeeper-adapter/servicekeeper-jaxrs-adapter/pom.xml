@@ -49,39 +49,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.esastack</groupId>
-                <artifactId>cabin-module-maven-plugin</artifactId>
-                <version>${cabin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>module-repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>cabin-classifier</classifier>
-                            <exported>
-                                <packages>
-                                    <package>io.esastack.servicekeeper.adapter.jaxrs</package>
-                                </packages>
-                            </exported>
-                            <imported>
-                                <packages>
-                                    <package>org.springframework</package>
-                                    <package>esa.commons</package>
-                                </packages>
-                            </imported>
-                            <excludes>
-                                <exclude>io.esastack:servicekeeper-*</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

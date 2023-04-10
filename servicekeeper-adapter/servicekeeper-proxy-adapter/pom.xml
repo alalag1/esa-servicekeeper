@@ -33,42 +33,4 @@
             <version>3.27.0-GA</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.esastack</groupId>
-                <artifactId>cabin-module-maven-plugin</artifactId>
-                <version>${cabin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>module-repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>cabin-classifier</classifier>
-                            <exported>
-                                <packages>
-                                    <package>io.esastack.servicekeeper.adapter.proxy</package>
-                                </packages>
-                                <!-- configure exported resource -->
-                                <resources>
-                                    <resource>META-INF/services/</resource>
-                                </resources>
-                            </exported>
-                            <imported>
-                                <packages>
-                                    <package>esa.commons</package>
-                                </packages>
-                            </imported>
-                            <excludes>
-                                <exclude>io.esastack:servicekeeper-*</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
