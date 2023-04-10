@@ -106,7 +106,6 @@
         <module>servicekeeper-configsource</module>
         <module>servicekeeper-metrics</module>
         <module>servicekeeper-ext</module>
-        <module>servicekeeper-shade</module>
     </modules>
 
     <properties>
